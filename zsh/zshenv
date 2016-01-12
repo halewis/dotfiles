@@ -1,0 +1,18 @@
+# Screen brightness
+export BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
+export BRIGHTNESS_MAX=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+
+# Set the default editor to vim
+export EDITOR="/usr/bin/vim"
+
+# Set the default pager to less
+export PAGER="/usr/bin/less"
+
+# Set the first terminal to be tried by i3
+export TERMINAL="/usr/bin/urxvt"
+
+# Set the base directory to which user-specific configuration files should be written
+export XDG_CONFIG_HOME="${HOME}/.config/"
+
+# gpg-agent
+export GPG_TTY=${TTY}

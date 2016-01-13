@@ -136,23 +136,46 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+# Colors
+# class			border	backgr	text	indicator
+client.focused		#2b303b	#4f5b66	#c0c5ce	#c0c5ce
+client.focused_inactive	#2b303b	#4f5b66	#c0c5ce	#c0c5ce
+client.unfocused	#2b303b	#2b303b	#c0c5ce	#c0c5ce
+client.urgent		#2b303b	#bf616a	#c0c5ce	#c0c5ce
+client.placeholder	#2b303b	#2b303b	#c0c5ce	#c0c5ce
+
+client.background	#2b303b
+
+# No window borders
+new_window none
+new_float none
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
         tray_output primary
+	# Permanently at one edge of the screen
+	# dock | hide | invisible
+	mode dock
+	# Show the bar
+	# hide|show
+	hidden_state show
+	# Position at top of screen
+	position top
+	# Show workspace numbering
+	workspace_buttons yes
+
+	colors {
+		background	#2b303b
+		statusline	#c0c5ce
+		separator	#65737e
+
+		#class			border	backgr	text
+		focused_workspace	#2b303b	#4f5b66	#c0c5ce
+		active_workspace	#2b303b	#4f5b66	#c0c5ce
+		inactive_workspace	#2b303b	#2b303b	#c0c5ce
+		#urgent_workspace
+		#binding_mode
+	}
 }
-
-# Colors
-# class			border	backgr	text	indicator
-#client.focused		#
-#client.focused_inactive	#
-#client.unfocused	#
-#client.urgent		#
-#client.placeholder	#
-
-#client.background
-
-# No window borders
-new_window none
-new_float none

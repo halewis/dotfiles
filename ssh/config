@@ -1,7 +1,11 @@
+UseRoaming no
+
 Host carbon
+	UseRoaming no
 	User Fhqwhgads
 	HostName carbon.collegiumv.org
 
 Host cs1
+	UseRoaming no
 	User jml140230
 	HostName cs1.utdallas.edu

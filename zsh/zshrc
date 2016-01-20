@@ -1,20 +1,11 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory nomatch
+# Ignore duplicate lines in the history
+setopt HIST_IGNORE_DUPS
 unsetopt autocd beep extendedglob notify
 bindkey -v
-# End of lines configured by zsh-newuser-install
-
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/joseph/.zshrc'
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
 
 # Load file containing aliases;
 source "${XDG_CONFIG_HOME}/zsh/aliases"
-
-# Ignore duplicate lines in the history
-setopt HIST_IGNORE_DUPS

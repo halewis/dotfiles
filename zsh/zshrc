@@ -13,5 +13,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Load file containing aliases;
+source "${XDG_CONFIG_HOME}/zsh/aliases"
+
 # Ignore duplicate lines in the history
 setopt HIST_IGNORE_DUPS

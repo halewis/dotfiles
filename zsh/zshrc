@@ -1,3 +1,11 @@
+# Load file containing aliases;
+source "${XDG_CONFIG_HOME}/zsh/aliases"
+
+# Enable autocompletion
+autoload -U compinit
+compinit
+
+# History settings
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
@@ -5,7 +13,6 @@ setopt appendhistory nomatch
 # Ignore duplicate lines in the history
 setopt HIST_IGNORE_DUPS
 unsetopt autocd beep extendedglob notify
-bindkey -v
 
-# Load file containing aliases;
-source "${XDG_CONFIG_HOME}/zsh/aliases"
+# Enable vi mode
+bindkey -v

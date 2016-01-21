@@ -1,5 +1,7 @@
-# Load file containing aliases;
+# Source file containing aliases;
 source "${XDG_CONFIG_HOME}/zsh/aliases"
+# Include ${HOME}/.bin in path
+export PATH=${PATH}:${HOME}/.bin
 
 # Enable autocompletion
 autoload -U compinit
@@ -10,9 +12,19 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory nomatch
-# Ignore duplicate lines in the history
+## Ignore duplicate lines in the history
 setopt HIST_IGNORE_DUPS
 unsetopt autocd beep extendedglob notify
 
 # Enable vi mode
 bindkey -v
+
+# Automatically add ssh keys to the ssh-agent
+## https://github.com/wwalker/ssh-find-agent
+. ssh-find-agent.sh
+ssh-find-agent -a
+if [ -z "$SSH_AUTH_SOCK" ]
+then
+	eval $(ssh-agent) > /dev/null
+	ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+fi

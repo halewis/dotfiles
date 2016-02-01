@@ -15,7 +15,7 @@ order += "tztime local"
 
 # Configure items
 wireless wlp1s0 {
-	format_up = "%quality at %essid, %ip"
+	format_up = "%quality %essid %ip"
 	format_down = "Wireless down"
 	color_good = "#a3be8c"
 	color_degraded = "#eff1f5"
@@ -23,7 +23,7 @@ wireless wlp1s0 {
 }
 
 battery 0 {
-	format = "%status %percentage %remaining"
+	format = "%status %percentage"
 	color_good = "#a3be8c"
 	color_degraded = "#eff1f5"
 	color_bad = "#bf616a"

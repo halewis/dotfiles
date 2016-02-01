@@ -16,7 +16,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+    xrdb "$userresources"
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -31,9 +31,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Disable caps lock
-setxkbmap -option caps:none
-
-# Start i3-wm
+# Set the background color
 xsetroot -solid "#2b303b"
+# Start xautolock in the background with a 5 minute timer and i3lock
+xautolock -time 5 -locker i3lock &
+# Start i3wm
 exec i3
+

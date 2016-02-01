@@ -34,7 +34,7 @@ fi
 # Set the background color
 xsetroot -solid "#2b303b"
 # Start xautolock in the background with a 5 minute timer and i3lock
-xautolock -time 5 -locker i3lock &
+xautolock -time 5 -locker i3lock-pixelate.sh &
 # Start i3wm
 exec i3
 

@@ -1,0 +1,18 @@
+# Script to start X when logging in from tty1
+# Based on Emanuel Berg's answer at
+#	unix.stackexchange.com/questions/6722/start-x-after-automatic-login
+
+# Get the current virtual terminal
+current_vt=`tty`
+# If the 7th character of the current terminal is 'p', it's running inside X
+if [[ ${current_vt[6]} == "p" ]]; then
+	export VT="X"
+# Else it has an assigned number
+else
+	export VT=${current_vt: -1:1}
+fi
+
+# If terminal was tty1, run startx
+case $VT in
+	(1) exec startx ;;
+esac

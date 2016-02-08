@@ -1,3 +1,5 @@
+# This file is used to set environment variables
+
 # Set the default editor to vim
 export EDITOR="/usr/bin/vim"
 

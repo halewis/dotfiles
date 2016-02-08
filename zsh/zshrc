@@ -1,3 +1,6 @@
+# This is the main user configuration file
+# It is sourced when zsh is started as an interactive shell
+
 # Source file containing aliases;
 source "${XDG_CONFIG_HOME}/zsh/aliases"
 # Include ${HOME}/.bin in path

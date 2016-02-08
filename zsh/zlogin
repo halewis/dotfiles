@@ -1,3 +1,5 @@
+# This file is sourced at the end of initial progress when zsh is started as a login shell
+
 # Script to start X when logging in from tty1
 # Based on Emanuel Berg's answer at
 #	unix.stackexchange.com/questions/6722/start-x-after-automatic-login

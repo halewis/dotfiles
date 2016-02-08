@@ -21,7 +21,7 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 
 # kill focused window
-bindsym $mod+Shift+Q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -137,13 +137,12 @@ mode "resize" {
 }
 
 # Colors
-# class			border	backgr	text	indicator
+## class		border	backgr	text	indicator
 client.focused		#2b303b	#4f5b66	#c0c5ce	#c0c5ce
 client.focused_inactive	#2b303b	#4f5b66	#c0c5ce	#c0c5ce
 client.unfocused	#2b303b	#2b303b	#c0c5ce	#c0c5ce
 client.urgent		#2b303b	#bf616a	#c0c5ce	#c0c5ce
 client.placeholder	#2b303b	#2b303b	#c0c5ce	#c0c5ce
-
 client.background	#2b303b
 
 # No window borders
@@ -156,14 +155,15 @@ bar {
         status_command i3status
         tray_output primary
 	# Permanently at one edge of the screen
-	# dock | hide | invisible
+	## dock | hide | invisible
 	mode dock
 	# Show the bar
-	# hide|show
+	## hide|show
 	hidden_state show
 	# Position at top of screen
 	position top
 	# Show workspace numbering
+	## yes|no
 	workspace_buttons yes
 
 	colors {
@@ -179,3 +179,4 @@ bar {
 		#binding_mode
 	}
 }
+

@@ -1,0 +1,6 @@
+# Ignore log files
+*logs/*
+*.*log
+
+# Ignore vim swap files
+*.sw*

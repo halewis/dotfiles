@@ -23,6 +23,13 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+q kill
 
+# Reload the configuration file
+bindsym $mod+Shift+C reload
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -105,13 +112,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# Reload the configuration file
-bindsym $mod+Shift+C reload
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # Enter resize window mode
 bindsym $mod+r mode "resize"
 # These bindings triggek as soon as you enter resize mode
@@ -135,6 +135,9 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# Automatically enter stacked layout when focused window is vimb
+for_window [class="Vimb"] focus child, layout tabbed, focus
 
 # Colors
 ## class		border	backgr	text	indicator

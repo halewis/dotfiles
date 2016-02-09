@@ -4,3 +4,6 @@
 
 # Ignore vim swap files
 *.sw*
+
+# Ignore the vimb directory
+vimb/

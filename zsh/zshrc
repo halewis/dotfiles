@@ -33,5 +33,13 @@ then
 fi
 
 # Set the prompt
-PROMPT='%~%# '
+## precmd prints before the prompt
+precmd() {
+	left="${USER}@${HOST}:${PWD}"
+	right="$(date)"
+	rightwidth=$((${COLUMNS}-${#left}))
+	print ${left}${(l:${rightwidth}:: :)right}
+}
+## Actual prompt line, which is left aligned
+PS1='%# '
 

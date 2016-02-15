@@ -51,36 +51,36 @@
 ! URxvt
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! Specifies name to be set for TERM environment variable
-URxvt.termName:	rxvt-unicode
+URxvt.termName: rxvt-unicode
 !	URxvt.geometry:geometry
 !	URxvt.chdir:string
 !	URxvt.reverseVideo:boolean
 ! Start as a login shell, causing login files to be loaded
-URxvt.loginShell:	true
+URxvt.loginShell: true
 !	URxvt.multiClickTime:number
 !	URxvt.jumpScroll:boolean
 !	URxvt.skipScroll:boolean
 !	URxvt.pastableTabs:boolean
 !	URxvt.scrollstyle:mode
 ! Disable the scroll bar entirely
-URxvt.scrollBar:	false
+URxvt.scrollBar: false
 ! Do not scroll with output
-URxvt.scrollTtyOutput:	false
+URxvt.scrollTtyOutput: false
 ! Scroll to bottom on keypress
-URxvt.scrollTtyKeypress:	true
+URxvt.scrollTtyKeypress: true
 ! Scroll in relation to buffer (Shift+PageUp)
-URxvt.scrollWithBuffer:		true
+URxvt.scrollWithBuffer:	 true
 !	URxvt.inheritPixmap:boolean
 !	URxvt.transparent:boolean
 !	URxvt.tintColor:color
 !	URxvt.shading:number
 !	URxvt.blurRadius:HxV
 ! Fade the text by the given percentage when focus is lost
-URxvt.fading:	40
+URxvt.fading: 40
 !	URxvt.fadeColor:color
 !	URxvt.utmpInhibit:boolean
 !	URxvt.urgentOnBell:boolean
-URxvt.visualBell:	false
+URxvt.visualBell: false
 !	URxvt.mapAlert:boolean
 !	URxvt.meta8:boolean
 !	URxvt.mouseWheelScrollPage:boolean
@@ -122,7 +122,7 @@ URxvt.visualBell:	false
 !	URxvt.pointerColor2:color
 !	URxvt.borderColor:color
 !	URxvt.iconFile:file
-!	URxvt.font:fontname
+URxvt.font: xft:inconsolata
 !	URxvt.boldFont:fontname
 !	URxvt.italicFont:fontname
 !	URxvt.boldItalicFont:fontname

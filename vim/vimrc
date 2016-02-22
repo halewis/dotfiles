@@ -7,26 +7,27 @@ colors default	" Set the color theme to be used
 syntax enable	" Enable syntax highlighting
 
 " Indentation settings
-"" These are further customized per filetype in .vim/after/ftplugin/
-setlocal tabstop=4		" Number of spaces vim expands existing \t to when editing
+"" These may be further customized per filetype in vim/after/ftplugin/
+setlocal tabstop=4			" Number of spaces vim expands existing \t to when editing
 setlocal shiftwidth=4		"
 setlocal softtabstop=4		" Number of spaces a tab counts for when editing
 filetype indent plugin on	" Attempt to detect filetype/contents so that vim can autoindent etc
-set autoindent			" When starting new line and no filetype-specific indenting is enabled, keep the same indent as the current line
+set autoindent				" When starting new line and no filetype-specific indenting is enabled, keep the same indent as the current line
 
 " Display line numbers on the left
 "" Hybrid line numbering
 if exists('+relativenumber')
 	set relativenumber
 endif
+"" Static line numbering
 set number
 
 " Miscellaneous editor settings
 set backspace=indent,eol,start	" Allow backspacing over autoindent, line breaks and start of insert action
-set showmatch			" Highlight matching {[(
-set nohls			" Disable highlighting
-set lazyredraw			" Redraw only when needed
-set incsearch			" Search as characters are typed
+set showmatch	" Highlight matching {[(
+set nohls		" Disable highlighting
+set lazyredraw	" Redraw only when needed
+set incsearch	" Search as characters are typed
 
 " Splitting
 set splitright	" Horizontal split will go right
@@ -50,8 +51,8 @@ if has("folding")
 endif
 
 " Set title to the name of the file
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
-set title
+"" Reset the title to the buffer's full path every time a buffer is entered
+auto BufEnter * :set title | let &titlestring = expand('%:p')
 
 " File saving
 "" Remove trailing whitespace on file save

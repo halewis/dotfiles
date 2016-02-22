@@ -34,8 +34,6 @@ fi
 
 # Set the prompt
 ## Left-aligned prompt line
-PS1='%n@%M:%~
-%# '
+PS1='%~%# '
 ## Right-aligned prompt line
 RPS1='%T'
-

@@ -1,25 +1,26 @@
 ################################################################################
 # Defaults
 ################################################################################
-SyncState *
-Create Both
+Create			Both
+SyncState		*
 
 ################################################################################
 # admin@lafreniere.xyz
 ################################################################################
 IMAPAccount xyz.lafreniere.admin
 	Host		imap.kolabnow.com
-	User		admin@lafreniere.xyz
 	PassCmd		"pass email/kolabnow.com/admin/password"
-	UseIMAPS	yes
-	RequireSSL	yes
+	Port		993
+	SSLType		IMAPS
+	SSLVersions	TLSv1.2
+	User		admin@lafreniere.xyz
 
 IMAPStore remote-xyz.lafreniere.admin
 	Account		xyz.lafreniere.admin
 
 MaildirStore local-xyz.lafreniere.admin
-	Path		${HOME}/.mail/xyz.lafreniere.admin/
-	Inbox		${HOME}/.mail/xyz.lafreniere.admin/inbox
+	Inbox		~/.mail/xyz.lafreniere.admin/inbox
+	Path		~/.mail/xyz.lafreniere.admin/
 
 Channel xyz.lafreniere.admin-inbox
 	Master		":remote-xyz.lafreniere.admin:INBOX"
@@ -38,17 +39,18 @@ Group xyz.lafreniere.admin
 ################################################################################
 IMAPAccount xyz.lafreniere.joseph
 	Host		imap.kolabnow.com
-	User		joseph@lafreniere.xyz
 	PassCmd		"pass email/kolabnow.com/joseph/password"
-	UseIMAPS	yes
-	RequireSSL	yes
+	Port		993
+	SSLType		IMAPS
+	SSLVersions	TLSv1.2
+	User		joseph@lafreniere.xyz
 
 IMAPStore remote-xyz.lafreniere.joseph
 	Account		xyz.lafreniere.joseph
 
 MaildirStore local-xyz.lafreniere.joseph
-	Path		${HOME}/.mail/xyz.lafreniere.joseph/
-	Inbox		${HOME}/.mail/xyz.lafreniere.joseph/inbox
+	Inbox		~/.mail/xyz.lafreniere.joseph/inbox
+	Path		~/.mail/xyz.lafreniere.joseph/
 
 Channel xyz.lafreniere.joseph-inbox
 	Master		":remote-xyz.lafreniere.joseph:INBOX"

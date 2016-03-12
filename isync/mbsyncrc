@@ -1,0 +1,63 @@
+################################################################################
+# Defaults
+################################################################################
+SyncState *
+Create Both
+
+################################################################################
+# admin@lafreniere.xyz
+################################################################################
+IMAPAccount xyz.lafreniere.admin
+	Host		imap.kolabnow.com
+	User		admin@lafreniere.xyz
+	PassCmd		"pass email/kolabnow.com/admin/password"
+	UseIMAPS	yes
+	RequireSSL	yes
+
+IMAPStore remote-xyz.lafreniere.admin
+	Account		xyz.lafreniere.admin
+
+MaildirStore local-xyz.lafreniere.admin
+	Path		${HOME}/.mail/xyz.lafreniere.admin/
+	Inbox		${HOME}/.mail/xyz.lafreniere.admin/inbox
+
+Channel xyz.lafreniere.admin-inbox
+	Master		":remote-xyz.lafreniere.admin:INBOX"
+	Slave		":local-xyz.lafreniere.admin:INBOX"
+
+Channel xyz.lafreniere.admin-sent
+	Master		":remote-xyz.lafreniere.admin:Sent"
+	Slave		":local-xyz.lafreniere.admin:Sent"
+
+Group xyz.lafreniere.admin
+	Channel		xyz.lafreniere.admin-inbox
+	Channel		xyz.lafreniere.admin-sent
+
+################################################################################
+# joseph@lafreniere.xyz
+################################################################################
+IMAPAccount xyz.lafreniere.joseph
+	Host		imap.kolabnow.com
+	User		joseph@lafreniere.xyz
+	PassCmd		"pass email/kolabnow.com/joseph/password"
+	UseIMAPS	yes
+	RequireSSL	yes
+
+IMAPStore remote-xyz.lafreniere.joseph
+	Account		xyz.lafreniere.joseph
+
+MaildirStore local-xyz.lafreniere.joseph
+	Path		${HOME}/.mail/xyz.lafreniere.joseph/
+	Inbox		${HOME}/.mail/xyz.lafreniere.joseph/inbox
+
+Channel xyz.lafreniere.joseph-inbox
+	Master		":remote-xyz.lafreniere.joseph:INBOX"
+	Slave		":local-xyz.lafreniere.joseph:INBOX"
+
+Channel xyz.lafreniere.joseph-sent
+	Master		":remote-xyz.lafreniere.joseph:Sent"
+	Slave		":local-xyz.lafreniere.joseph:Sent"
+
+Group xyz.lafreniere.joseph
+	Channel		xyz.lafreniere.joseph-inbox
+	Channel		xyz.lafreniere.joseph-sent

@@ -1,0 +1,6 @@
+set realname	= "Joseph LaFreniere"
+set from		= "admin@lafreniere.xyz"
+set use_from	= yes
+set sendmail	= "msmtp -a xyz.lafreniere.admin"
+set mbox		= "+xyz.lafreniere.admin/inbox"
+set postponed	= "+xyz.lafreniere.admin/drafts"

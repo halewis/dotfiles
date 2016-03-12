@@ -7,3 +7,6 @@
 
 # Ignore vim/view
 vim/view
+
+# Ignore mutt's temporary files
+mutt/tmp

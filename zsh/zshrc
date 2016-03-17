@@ -3,8 +3,10 @@
 
 # Source file containing aliases;
 source "${XDG_CONFIG_HOME}/zsh/aliases"
-# Include ${HOME}/.bin in path
-export PATH=${PATH}:${HOME}/.bin
+# Include ${HOME}/.bin in path if directory exists
+if [ -d "${HOME}/.bin" ]; then
+	export PATH=${PATH}:${HOME}/.bin
+fi
 
 # Enable autocompletion
 autoload -U compinit
@@ -24,16 +26,37 @@ bindkey -v
 
 # Automatically add ssh keys to the ssh-agent
 ## https://github.com/wwalker/ssh-find-agent
-. ssh-find-agent.sh
-ssh-find-agent -a
-if [ -z "$SSH_AUTH_SOCK" ]
-then
-	eval $(ssh-agent) > /dev/null
-	ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-fi
+#. ssh-find-agent.sh
+#ssh-find-agent -a
+#if [ -z "$SSH_AUTH_SOCK" ]; then
+#	eval $(ssh-agent) > /dev/null
+#	ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+#fi
 
 # Set the prompt
 ## Left-aligned prompt line
 PS1='%~%# '
 ## Right-aligned prompt line
 RPS1='%T'
+
+# Set TTY colors
+## Base16 default - https://chriskempson.com
+if [ "$TERM" = "linux" ]; then
+	echo -en "\e]P0181818"	# base00
+	echo -en "\e]P1282828"	# base01
+	echo -en "\e]P2383838"	# base02
+	echo -en "\e]P3585858"	# base03
+	echo -en "\e]P4b8b8b8"	# base04
+	echo -en "\e]P5d8d8d8"	# base05
+	echo -en "\e]P6e8e8e8"	# base06
+	echo -en "\e]P7f8f8f8"	# base07
+	echo -en "\e]P8ab4642"	# base08
+	echo -en "\e]P9dc9656"	# base09
+	echo -en "\e]PAf7ca88"	# base0A
+	echo -en "\e]PBa1b56c"	# base0B
+	echo -en "\e]PC86c1b9"	# base0C
+	echo -en "\e]PD7cafc2"	# base0D
+	echo -en "\e]PEba8baf"	# base0E
+	echo -en "\e]PFa16946"	# base0F
+	clear					# Prevents background artifacting
+fi

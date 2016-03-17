@@ -1,6 +1,14 @@
 " Disable forced vi backwards compatibility
 set nocompatible
 
+" Change temp file locations
+"" Directory in which to create backups
+set backupdir=~/.vim/backup//
+"" Directory in which to create swap files
+set directory=~/.vim/swap//
+"" Directory in which to create undo files
+set undodir=~/.vim/undo//
+
 " Character encoding
 set fileencodings=utf-8
 

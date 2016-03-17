@@ -8,5 +8,10 @@
 # Ignore vim/view
 vim/view
 
+# Ignore directories for vim's temp files
+vim/backup
+vim/swap
+vim/undo
+
 # Ignore mutt's temporary files
 mutt/tmp

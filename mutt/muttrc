@@ -29,7 +29,7 @@
 # set index_format		= "%4C %Z %{%m/%d} %-15.15F (%4c) %s" # format of the index
 # set hdrs									# Include `my_hdr' lines in outgoing messages
 # set header								# Include message header when replying
-  set help									# Show the help lines
+  set help				= no				# Show the help lines
 # set history=20							# Number of lines of history to remember
 # set hostname="mutt.org"					# My DNS domain
   set include								# Always include messages when replying
@@ -80,6 +80,7 @@
 # set status_format		= "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?  %l]---(%s)-%>-(%P)---"
 # set status_on_top							# some people prefer the status bar on top
 # set strict_threads						# don't thread by subject
+  set text_flowed		= yes				# Wrap lines for better viewing in other clients
 # set tilde									# virtual lines to pad blank lines in the pager
   set timeout			= 3					# Idle time before scanning (seconds)
   set tmpdir			= ${HOME}/.mutt/tmp	# where to store temp files

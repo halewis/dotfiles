@@ -19,7 +19,7 @@ set copy				= yes				# Always save a copy of outgoing messages
 set editor				= "vim -c 'set filetype=mail' -c 'set spell spelllang=en_US'"
 # set fast_reply							# Skip initial prompts when replying
 # set fcc_attach							# Keep attachments in copies of sent messages?
-  set folder			= ${HOME}/Mail		# Directory of new folder
+  set folder			= ${HOME}/mail		# Directory of new folder
   set folder_format		= "%2C %t %N %F %2l %-8.8u %-8.8g %8s %d %f"
 #set force_name								# fcc by recipient, create if mailbox nonexistent
 # set forward_decode						# weed and MIME decode forwaded messages

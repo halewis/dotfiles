@@ -1,27 +1,27 @@
-  set abort_unmodified	= yes				# Automatically abort unedited replies
-  set alias_file		= ${HOME}/.mutt/aliasesl_aliases	# Where I keep my aliases
+set abort_unmodified	= yes				# Automatically abort unedited replies
+set alias_file			= ${HOME}/.mutt/aliases	# Where I keep my aliases
 # set allow_8bit							# Never do Q-P encoding on legal 8-bit chars
 # set arrow_cursor							# Use '->' instead of hiliting the whole line
 # set ascii_chars							# Use ASCII instead of ACS chars for threads
 # set askbcc
 # set askcc
 # set attribution="On %d, %n wrote:"		# How to attribute replies
-  set autoedit								# Go immediately to editor when composing
+set autoedit								# Go immediately to editor when composing
 # set auto_tag								# always operate on tagged messages
+# set bounce			= yes				# Don't ask about bouncing messages, just do it
 # set charset			= "iso-8859-1"		# character set for your terminal
 # set noconfirmappend						# Don't ask for appending to mailboxes
 # set confirmcreate							# Prompt when creating new files
-  set copy				= yes				# Always save a copy of outgoing messages
+set copy				= yes				# Always save a copy of outgoing messages
 # set delete			= yes				# purge deleted messages without asking
 # set delete_untag		= yes				# Untag messages when marking for deletion
   set edit_headers							# Edit the message header when composing
-  set editor			= "vim -c 'set filetype=mail'"	# Editor
-# set bounce			= yes				# Don't ask about bouncing messages, just do it
+set editor				= "vim -c 'set filetype=mail' -c 'set spell spelllang=en_US'"
 # set fast_reply							# Skip initial prompts when replying
 # set fcc_attach							# Keep attachments in copies of sent messages?
-  set folder			= ${HOME}/.mail		# Directory of new folder
+  set folder			= ${HOME}/Mail		# Directory of new folder
   set folder_format		= "%2C %t %N %F %2l %-8.8u %-8.8g %8s %d %f"
-# set force_name							# fcc by recipient, create if mailbox nonexistent
+#set force_name								# fcc by recipient, create if mailbox nonexistent
 # set forward_decode						# weed and MIME decode forwaded messages
 # set forward_format	= "[%a: %s]"		# Subject to use when forwarding messages
 # set forward_quote							# Quote the header and body of forward msgs
@@ -72,11 +72,11 @@
   set sendmail_wait		= 0					# Wait for msmtp to return
 # set shell				= "/bin/zsh"		# Used for shell escapes, default is user's default
 # set signature			= "${HOME}/.signature"	# File which contains my signature
-  set sort				= threads			# Primary sorting method
-  set sort_aux			= reverse-date-received			# how to sort subthreads
-  set sort_aux			= last-date			# Date of the last message in thread
-  set sort_browser		= reverse-date		# How to sort files in the dir browser
-  set spoolfile			= "${HOME}/.mail/xyz.lafreniere.joseph/inbox"			# where my new mail is located
+set sort				= threads			# Primary sorting method
+set sort_aux			= reverse-date-received			# how to sort subthreads
+set sort_aux			= last-date			# Date of the last message in thread
+set sort_browser		= reverse-date		# How to sort files in the dir browser
+set spoolfile			= "${HOME}/Mail/xyz.lafreniere.joseph/inbox"	# where my new mail is located
 # set status_format		= "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?  %l]---(%s)-%>-(%P)---"
 # set status_on_top							# some people prefer the status bar on top
 # set strict_threads						# don't thread by subject

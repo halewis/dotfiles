@@ -18,9 +18,9 @@ IMAPAccount xyz.lafreniere.admin
 IMAPStore remote-xyz.lafreniere.admin
 	Account		xyz.lafreniere.admin
 
-MaildirStore local-xyz.lafreniere.admin
-	Inbox		~/.mail/xyz.lafreniere.admin/inbox
-	Path		~/.mail/xyz.lafreniere.admin/
+maildirStore local-xyz.lafreniere.admin
+	Inbox		~/mail/xyz.lafreniere.admin/inbox
+	Path		~/mail/xyz.lafreniere.admin/
 
 Channel xyz.lafreniere.admin-inbox
 	Master		":remote-xyz.lafreniere.admin:INBOX"
@@ -48,9 +48,9 @@ IMAPAccount xyz.lafreniere.joseph
 IMAPStore remote-xyz.lafreniere.joseph
 	Account		xyz.lafreniere.joseph
 
-MaildirStore local-xyz.lafreniere.joseph
-	Inbox		~/.mail/xyz.lafreniere.joseph/inbox
-	Path		~/.mail/xyz.lafreniere.joseph/
+maildirStore local-xyz.lafreniere.joseph
+	Inbox		~/mail/xyz.lafreniere.joseph/inbox
+	Path		~/mail/xyz.lafreniere.joseph/
 
 Channel xyz.lafreniere.joseph-inbox
 	Master		":remote-xyz.lafreniere.joseph:INBOX"

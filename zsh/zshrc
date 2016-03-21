@@ -60,3 +60,9 @@ if [ "$TERM" = "linux" ]; then
 	echo -en "\e]PFa16946"	# base0F
 	clear					# Prevents background artifacting
 fi
+
+# Set TTY font
+## Set to terminus size 14 if that exists
+if [ -f /user/share/kbd/consolefonts/ter-114n.psf.gz ]; then
+	setfont ter-114n -m 8859-2
+fi

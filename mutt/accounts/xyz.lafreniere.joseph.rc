@@ -1,4 +1,4 @@
-set copy		= "+xyz.lafreniere.joseph/sent"		# Directory for sent messages
+set record		= "+xyz.lafreniere.joseph/sent"		# Directory for sent messages
 set from		= "joseph@lafreniere.xyz"			# Address for 'from' field
 set mbox		= "+xyz.lafreniere.joseph/inbox"	# Directory for saved messages
 set postponed	= "+xyz.lafreniere.joseph/drafts"	# Directory for drafts

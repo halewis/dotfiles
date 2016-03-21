@@ -1,9 +1,7 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 
+# Set the modifer key
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -12,7 +10,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -140,13 +138,13 @@ mode "resize" {
 for_window [class="Vimb"] focus child, layout tabbed, focus
 
 # Colors
-## class		border	backgr	text	indicator
-client.focused		#2b303b	#4f5b66	#c0c5ce	#c0c5ce
+## class				border	backgr	text	indicator
+client.focused			#2b303b	#4f5b66	#c0c5ce	#c0c5ce
 client.focused_inactive	#2b303b	#4f5b66	#c0c5ce	#c0c5ce
-client.unfocused	#2b303b	#2b303b	#c0c5ce	#c0c5ce
-client.urgent		#2b303b	#bf616a	#c0c5ce	#c0c5ce
-client.placeholder	#2b303b	#2b303b	#c0c5ce	#c0c5ce
-client.background	#2b303b
+client.unfocused		#2b303b	#2b303b	#c0c5ce	#c0c5ce
+client.urgent			#2b303b	#bf616a	#c0c5ce	#c0c5ce
+client.placeholder		#2b303b	#2b303b	#c0c5ce	#c0c5ce
+client.background		#2b303b
 
 # No window borders
 new_window none
@@ -155,8 +153,8 @@ new_float none
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        tray_output primary
+	status_command i3status
+	tray_output primary
 	# Permanently at one edge of the screen
 	## dock | hide | invisible
 	mode dock
@@ -174,12 +172,14 @@ bar {
 		statusline	#c0c5ce
 		separator	#65737e
 
-		#class			border	backgr	text
+		#class				border	backgr	text
 		focused_workspace	#2b303b	#4f5b66	#c0c5ce
 		active_workspace	#2b303b	#4f5b66	#c0c5ce
 		inactive_workspace	#2b303b	#2b303b	#c0c5ce
-		#urgent_workspace
+		urgent_workspace	#2b303b	#4f5b66	#2b303b
 		#binding_mode
 	}
 }
 
+# Automatically start some applications
+exec --no-startup-id urxvt

@@ -28,7 +28,7 @@ Channel xyz.lafreniere.admin-inbox
 
 Channel xyz.lafreniere.admin-sent
 	Master		":remote-xyz.lafreniere.admin:Sent"
-	Slave		":local-xyz.lafreniere.admin:Sent"
+	Slave		":local-xyz.lafreniere.admin:sent"
 
 Group xyz.lafreniere.admin
 	Channel		xyz.lafreniere.admin-inbox
@@ -58,7 +58,7 @@ Channel xyz.lafreniere.joseph-inbox
 
 Channel xyz.lafreniere.joseph-sent
 	Master		":remote-xyz.lafreniere.joseph:Sent"
-	Slave		":local-xyz.lafreniere.joseph:Sent"
+	Slave		":local-xyz.lafreniere.joseph:sent"
 
 Group xyz.lafreniere.joseph
 	Channel		xyz.lafreniere.joseph-inbox

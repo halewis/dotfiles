@@ -2,13 +2,8 @@
 *logs/*
 *.*log
 
-# Ignore vim swap files
-*.sw*
-
 # Ignore vim/view
 vim/view
-
-# Ignore directories for vim's temp files
 vim/backup
 vim/swap
 vim/undo

@@ -1,20 +1,10 @@
 # This file is sourced at the end of initial progress when zsh is started as a login shell
 
-# Script to start X when logging in from tty1
-# Based on Emanuel Berg's answer at
-#	unix.stackexchange.com/questions/6722/start-x-after-automatic-login
-
 # Get the current virtual terminal
 current_vt=`tty`
-# If the 7th character of the current terminal is 'p', it's running inside X
-if [[ ${current_vt[6]} == "p" ]]; then
-	export VT="X"
-# Else it has an assigned number
-else
-	export VT=${current_vt: -1:1}
-fi
 
-# If terminal was tty1, run startx
-case $VT in
-	(1) exec startx ;;
-esac
+# Set font to terminus size 14 if in tty
+if [ ${current_vt#*/dev/tty} != ${current_vt} ] && [ -f /usr/share/kbd/consolefonts/ter-114n.psf.gz ]
+then
+	setfont ter-114n -m 8859-2
+fi

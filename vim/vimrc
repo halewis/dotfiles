@@ -47,11 +47,11 @@ filetype indent plugin on	" Attempt to detect filetype/contents so that vim can 
 set autoindent				" When starting new line and no filetype-specific indenting is enabled, keep the same indent as the current line
 
 " Display line numbers on the left
-"" Hybrid line numbering
-if exists('+relativenumber')
+"" Hybrid line numbering by host
+if hostname() == "jlafreniere-c720"
 	set relativenumber
 endif
-"" Static line numbering
+"" Static line numbering for all
 set number
 
 " Searching

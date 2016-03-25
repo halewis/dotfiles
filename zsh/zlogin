@@ -1,10 +1,20 @@
-# This file is sourced at the end of initial progress when zsh is started as a login shell
+# This file is sourced at the end of initial progress
+# when zsh is started as a login shell
 
 # Get the current virtual terminal
 current_vt=`tty`
 
-# Set font to terminus size 14 if in tty
-if [ ${current_vt#*/dev/tty} != ${current_vt} ] && [ -f /usr/share/kbd/consolefonts/ter-114n.psf.gz ]
+# Do things if in tty
+if [ ${current_vt#*/dev/tty} != ${current_vt} ]
 then
-	setfont ter-114n -m 8859-2
+	# Set font to terminus size 14 if font is installed
+	if [ -f /usr/share/kbd/consolefonts/ter-114n.psf.gz ]
+	then
+		setfont ter-114n -m 8859-2
+	fi
+	# Start tmux if in tty2
+	if [ ${current_vt: -1} -eq 2 ]
+	then
+		`tmux`
+	fi
 fi

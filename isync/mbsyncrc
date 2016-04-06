@@ -7,6 +7,36 @@ SyncState		*
 ################################################################################
 # admin@lafreniere.xyz
 ################################################################################
+IMAPAccount com.gmail.lafrenierejm
+	Host		imap.gmail.com
+	PassCmd		"pass email/gmail.com/mutt_jlafreniere-c720"
+	Port		993
+	SSLType		IMAPS
+	SSLVersions	TLSv1.2
+	User		lafrenierejm
+
+IMAPStore remote-com.gmail.lafrenierejm
+	Account		com.gmail.lafrenierejm
+
+MaildirStore local-com.gmail.lafrenierejm
+	Inbox		~/mail/com.gmail.lafrenierejm/inbox
+	Path		~/mail/com.gmail.lafrenierejm/
+
+Channel com.gmail.lafrenierejm-inbox
+	Master		":remote-com.gmail.lafrenierejm:INBOX"
+	Slave		":local-com.gmail.lafrenierejm:INBOX"
+
+Channel com.gmail.lafrenierejm-sent
+	Master		":remote-com.gmail.lafrenierejm:[Gmail]/Sent Mail"
+	Slave		":local-com.gmail.lafrenierejm:sent"
+
+Group com.gmail.lafrenierejm
+	Channel		com.gmail.lafrenierejm-inbox
+	Channel		com.gmail.lafrenierejm-sent
+
+################################################################################
+# admin@lafreniere.xyz
+################################################################################
 IMAPAccount xyz.lafreniere.admin
 	Host		imap.kolabnow.com
 	PassCmd		"pass email/kolabnow.com/admin/password"
@@ -18,7 +48,7 @@ IMAPAccount xyz.lafreniere.admin
 IMAPStore remote-xyz.lafreniere.admin
 	Account		xyz.lafreniere.admin
 
-maildirStore local-xyz.lafreniere.admin
+MaildirStore local-xyz.lafreniere.admin
 	Inbox		~/mail/xyz.lafreniere.admin/inbox
 	Path		~/mail/xyz.lafreniere.admin/
 
@@ -48,7 +78,7 @@ IMAPAccount xyz.lafreniere.joseph
 IMAPStore remote-xyz.lafreniere.joseph
 	Account		xyz.lafreniere.joseph
 
-maildirStore local-xyz.lafreniere.joseph
+MaildirStore local-xyz.lafreniere.joseph
 	Inbox		~/mail/xyz.lafreniere.joseph/inbox
 	Path		~/mail/xyz.lafreniere.joseph/
 

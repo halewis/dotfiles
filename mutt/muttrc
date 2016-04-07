@@ -95,8 +95,10 @@ set spoolfile			= "$HOME/mail/xyz.lafreniere.joseph/inbox"	# where my new mail i
 # set write_inc=25						# show progress while writing mailboxes
 
 # Source account configurations
-folder-hook "xyz.lafreniere.admin" "source $HOME/.mutt/accounts/xyz.lafreniere.admin.rc"
-folder-hook "xyz.lafreniere.joseph" "source $HOME/.mutt/accounts/xyz.lafreniere.joseph.rc"
+folder-hook "com.gmail.lafrenierejm"	"source $HOME/.mutt/accounts/com.gmail.lafrenierejm.rc"
+folder-hook "edu.utdallas.jml140230"	"source $HOME/.mutt/accounts/edu.utdallas.jml140230.rc"
+folder-hook "xyz.lafreniere.admin"		"source $HOME/.mutt/accounts/xyz.lafreniere.admin.rc"
+folder-hook "xyz.lafreniere.joseph"		"source $HOME/.mutt/accounts/xyz.lafreniere.joseph.rc"
 source $HOME/.mutt/accounts/xyz.lafreniere.joseph.rc	# Default account
 
 # Source external files

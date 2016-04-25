@@ -12,6 +12,20 @@ set undodir=~/.vim/undo//
 " Character encoding
 set fileencodings=utf-8
 
+" vim-plug
+"" Ensure that vim-plug is installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs\
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
+"" Begin list of plugins
+call plug#begin('~/.vim/plugged')
+Plug 'cespare/vim-toml'		" Syntax for TOML
+Plug 'rust-lang/rust.vim'	" Configuration for Rust
+call plug#end()
+"" End list of plugins
+
 set backspace=indent,eol,start	" Allow backspacing over autoindent, line breaks and start of insert action
 set showmatch	" Highlight matching {[(
 set lazyredraw	" Redraw only when needed
@@ -99,3 +113,4 @@ set hidden
 "" Save folds on exit
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
+

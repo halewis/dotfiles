@@ -12,6 +12,11 @@ then
 	then
 		setfont ter-114n -m 8859-2
 	fi
+	# Start X if in tty1
+	if [ ${current_vt: -1} -eq 1 ]
+	then
+		exec startx
+	fi
 	# Start tmux if in tty2
 	if [ ${current_vt: -1} -eq 2 ]
 	then
